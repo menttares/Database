@@ -1,5 +1,7 @@
-namespace Database;
 using Microsoft.Data.SqlClient;
+using Database.Services;
+using Database.Services.Interfeces;
+namespace Database;
 
 
 public class Program
@@ -7,6 +9,14 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
+        // получаем строку подключения из файла конфигурации
+        string? connectionString = builder.Configuration.GetConnectionString("ADO.NET");
+        
+        // Подключение сервиса для база даннах
+        builder.Services.AddTransient<IDataAccess, DataAccess>( provider => {
+            return new DataAccess(connectionString);
+        });
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();

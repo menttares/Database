@@ -8,16 +8,10 @@ public class DataAccess : IDataAccess
     private SqlConnection connection {get; init;} 
     public DataAccess(string connectionString)
     {
-        try
-        {
-            this.connection = new SqlConnection(connectionString);
-        }
-        catch (System.Exception ex)
-        {
-            
-            connection.Close();
-        }
+        this.connection = new SqlConnection(connectionString);
     }
+
+
 
     ~DataAccess()
     {
