@@ -1,0 +1,21 @@
+
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.panel__checklist {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+}
+
+.panel__search {
+    display: flex;
+}
+
+
+

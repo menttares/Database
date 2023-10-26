@@ -1,8 +1,59 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Главная станица";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="panel">
+
+    <div class="panel__checklist">
+        <div class="panel__checkcontent">
+            <input class="panel__checkbox" type="checkbox" value="true" id="flexCheckDefault">
+            <label class="panel__checkbox-lable" for="flexCheckDefault">
+                Поиск по все таблицам
+            </label>
+        </div>
+
+        <div class="panel__checkcontent">
+            <input class="panel__checkbox" type="checkbox" value="true" id="flexCheckDefault">
+            <label class="panel__checkbox-lable" for="flexCheckDefault">
+                Поиск по все таблицам
+            </label>
+        </div>
+    </div>
+
+    <div class="panel__search">
+        <input type="text" class="form-control" placeholder="Введите текст..." aria-label="">
+        <input type="button" class="btn btn-primary ms-1" value="Поиск">
+    </div>
+</div>
+
+
+<div>
+    <table id="ContentTable" class="Table">
+        <caption id="TableCaption" class="Table__caption">Список пользователей</caption>
+        <thead id="TableHead" class="Table__head">
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Фамилия</th>
+            </tr>
+        </thead>
+        <tbody id="TableBody" class="Table__body">
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+            </tr>
+
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry the Bird</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

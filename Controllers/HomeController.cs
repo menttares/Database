@@ -17,11 +17,22 @@ public class HomeController : Controller
         this.database = database;
     }
 
+    [HttpGet]
+    /// <summary>
+    /// Метод рендеринга главной страницы
+    /// </summary>
     public IActionResult Index()
     {
         return View();
     }
 
+    
+
+
+    /// <summary>
+    /// Метод рендеринга страницы проекта
+    /// </summary>
+    [HttpGet]
     public IActionResult Privacy()
     {
         return View();
