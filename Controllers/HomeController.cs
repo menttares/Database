@@ -8,10 +8,10 @@ namespace Database.Controllers;
 public class HomeController : Controller
 {   
 
-    public DataAccess database;
+    public PostgresDataService database;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger, DataAccess database)
+    public HomeController(ILogger<HomeController> logger, PostgresDataService database)
     {
         _logger = logger;
         this.database = database;

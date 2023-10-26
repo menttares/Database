@@ -1,47 +1,49 @@
 using Microsoft.Data.SqlClient;
 using Database.Services;
-using Database.Services.Interfeces;
-namespace Database;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Hosting;
 
-
-public class Program
+namespace Database
 {
-    public static void Main(string[] args)
+    public class Program
     {
-        var builder = WebApplication.CreateBuilder(args);
-
-        // получаем строку подключения из файла конфигурации
-        string? connectionString = builder.Configuration.GetConnectionString("ADO.NET");
-        
-        // Подключение сервиса для база даннах
-        builder.Services.AddTransient<IDataAccess, DataAccess>( provider => {
-            return new DataAccess(connectionString);
-        });
-
-        // Add services to the container.
-        builder.Services.AddControllersWithViews();
-
-        var app = builder.Build();
-
-        // Configure the HTTP request pipeline.
-        if (!app.Environment.IsDevelopment())
+        public static void Main(string[] args)
         {
-            app.UseExceptionHandler("/Home/Error");
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-            app.UseHsts();
+            var builder = WebApplication.CreateBuilder(args);
+
+            // Получаем строку подключения из файла конфигурации
+            string? connectionString = builder.Configuration.GetConnectionString("ADO.NET");
+
+            // Подключение сервиса PostgresDataService
+            builder.Services.AddTransient<PostgresDataService>(_ => new PostgresDataService(connectionString));
+
+            // Добавляем сервисы в контейнер.
+            builder.Services.AddControllersWithViews();
+
+            var app = builder.Build();
+
+            // Настраиваем конвейер HTTP-запросов.
+            if (!app.Environment.IsDevelopment())
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            app.Run();
         }
-
-        app.UseHttpsRedirection();
-        app.UseStaticFiles();
-
-        app.UseRouting();
-
-        app.UseAuthorization();
-
-        app.MapControllerRoute(
-            name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}");
-
-        app.Run();
     }
 }

@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VScode\\Database\\Database.csproj": {}
+    "/home/su/vscode/C#/Database/Database.csproj": {}
   },
   "projects": {
-    "D:\\VScode\\Database\\Database.csproj": {
+    "/home/su/vscode/C#/Database/Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VScode\\Database\\Database.csproj",
+        "projectUniqueName": "/home/su/vscode/C#/Database/Database.csproj",
         "projectName": "Database",
-        "projectPath": "D:\\VScode\\Database\\Database.csproj",
-        "packagesPath": "C:\\Users\\USSR\\.nuget\\packages\\",
-        "outputPath": "D:\\VScode\\Database\\obj\\",
+        "projectPath": "/home/su/vscode/C#/Database/Database.csproj",
+        "packagesPath": "/home/su/.nuget/packages/",
+        "outputPath": "/home/su/vscode/C#/Database/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USSR\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/su/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net7.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -32,14 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "default"
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.Data.SqlClient": {
               "target": "Package",
@@ -65,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.7.23376.3\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
         }
       }
     }
