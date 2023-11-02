@@ -394,3 +394,9 @@
 /home/su/vscode/C#/Database/bin/Debug/net7.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
 /home/su/vscode/C#/Database/bin/Debug/net7.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
 /home/su/vscode/C#/Database/obj/Debug/net7.0/Database.MvcApplicationPartsAssemblyInfo.cs
+/home/su/vscode/C#/Database/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll
+/home/su/vscode/C#/Database/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/su/vscode/C#/Database/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/su/vscode/C#/Database/bin/Debug/net7.0/Npgsql.dll
+/home/su/vscode/C#/Database/bin/Debug/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/su/vscode/C#/Database/bin/Debug/net7.0/Newtonsoft.Json.dll

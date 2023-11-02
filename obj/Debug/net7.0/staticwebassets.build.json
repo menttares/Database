@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kavHWNDDkg/yOnjQUN+wK0lGbjcw8YbZDY3j9fOed4I=",
+  "Hash": "LpIp6OEzqgcKhwlEyFObxzS0YY93w2mn3a5h5/V3Mvc=",
   "Source": "Database",
   "BasePath": "_content/Database",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "/home/su/vscode/C#/Database/obj/Debug/net7.0/scopedcss/projectbundle/Database.bundle.scp.css"
     },
     {
+      "Identity": "/home/su/vscode/C#/Database/wwwroot/css/panel.css",
+      "SourceId": "Database",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/su/vscode/C#/Database/wwwroot/",
+      "BasePath": "_content/Database",
+      "RelativePath": "css/panel.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/panel.css"
+    },
+    {
       "Identity": "/home/su/vscode/C#/Database/wwwroot/css/site.css",
       "SourceId": "Database",
       "SourceType": "Discovered",
@@ -66,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/home/su/vscode/C#/Database/wwwroot/css/style.css",
+      "SourceId": "Database",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/su/vscode/C#/Database/wwwroot/",
+      "BasePath": "_content/Database",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/style.css"
+    },
+    {
+      "Identity": "/home/su/vscode/C#/Database/wwwroot/css/table.css",
+      "SourceId": "Database",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/su/vscode/C#/Database/wwwroot/",
+      "BasePath": "_content/Database",
+      "RelativePath": "css/table.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/table.css"
     },
     {
       "Identity": "/home/su/vscode/C#/Database/wwwroot/favicon.ico",
@@ -85,12 +136,12 @@
       "OriginalItemSpec": "wwwroot/favicon.ico"
     },
     {
-      "Identity": "/home/su/vscode/C#/Database/wwwroot/js/site.js",
+      "Identity": "/home/su/vscode/C#/Database/wwwroot/js/Api.js",
       "SourceId": "Database",
       "SourceType": "Discovered",
       "ContentRoot": "/home/su/vscode/C#/Database/wwwroot/",
       "BasePath": "_content/Database",
-      "RelativePath": "js/site.js",
+      "RelativePath": "js/Api.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,7 +150,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/site.js"
+      "OriginalItemSpec": "wwwroot/js/Api.js"
+    },
+    {
+      "Identity": "/home/su/vscode/C#/Database/wwwroot/js/Table.js",
+      "SourceId": "Database",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/su/vscode/C#/Database/wwwroot/",
+      "BasePath": "_content/Database",
+      "RelativePath": "js/Table.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/Table.js"
     },
     {
       "Identity": "/home/su/vscode/C#/Database/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",

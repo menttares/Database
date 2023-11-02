@@ -5,16 +5,32 @@
       "PackagePath": "staticwebassets/Database.bundle.scp.css"
     },
     {
+      "Id": "/home/su/vscode/C#/Database/wwwroot/css/panel.css",
+      "PackagePath": "staticwebassets/css/panel.css"
+    },
+    {
       "Id": "/home/su/vscode/C#/Database/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/home/su/vscode/C#/Database/wwwroot/css/style.css",
+      "PackagePath": "staticwebassets/css/style.css"
+    },
+    {
+      "Id": "/home/su/vscode/C#/Database/wwwroot/css/table.css",
+      "PackagePath": "staticwebassets/css/table.css"
     },
     {
       "Id": "/home/su/vscode/C#/Database/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
-      "Id": "/home/su/vscode/C#/Database/wwwroot/js/site.js",
-      "PackagePath": "staticwebassets/js/site.js"
+      "Id": "/home/su/vscode/C#/Database/wwwroot/js/Api.js",
+      "PackagePath": "staticwebassets/js/Api.js"
+    },
+    {
+      "Id": "/home/su/vscode/C#/Database/wwwroot/js/Table.js",
+      "PackagePath": "staticwebassets/js/Table.js"
     },
     {
       "Id": "/home/su/vscode/C#/Database/wwwroot/lib/bootstrap/LICENSE",

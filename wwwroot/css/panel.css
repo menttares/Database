@@ -8,7 +8,6 @@
 
 .panel__checklist {
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     padding: 5px;
 }
@@ -17,5 +16,8 @@
     display: flex;
 }
 
+.panel__checkcontent {
+    margin-left: 5px;
+}
 
 

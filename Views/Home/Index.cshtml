@@ -2,22 +2,34 @@
     ViewData["Title"] = "Главная станица";
 }
 
+<div class=" d-flex justify-content-center">
+    <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <button type="button" data-tablename="ЗаказПредставление" class="btn btn-outline-primary btn-event-get-table">Заказы</button>
+        <button type="button" data-tablename="ПеревозкиПредставление" class="btn btn-outline-primary btn-event-get-table">Перевозки</button>
+        <button type="button" data-tablename="Покупатель" class="btn btn-outline-primary btn-event-get-table">Покупатели</button>
+        <button type="button" data-tablename="Мебель" class="btn btn-outline-primary btn-event-get-table">Товары</button>
+        <button type="button" data-tablename="Машина" class="btn btn-outline-primary btn-event-get-table">Машины</button>
+        <button type="button" data-tablename="Водитель" class="btn btn-outline-primary btn-event-get-table">Водители</button>
+    </div>
+</div>
+
+<hr>
+
+
 <div class="panel">
 
     <div class="panel__checklist">
-        <div class="panel__checkcontent">
-            <input class="panel__checkbox" type="checkbox" value="true" id="flexCheckDefault">
-            <label class="panel__checkbox-lable" for="flexCheckDefault">
-                Поиск по все таблицам
-            </label>
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <button type="button" class="btn btn-success btn-event-add-row">
+                <i class="bi bi-plus-circle"></i>
+                Добавить строку
+                </button>
+            <button type="button" class="btn btn-warning btn-event-add-filter">
+                <i class="bi bi-funnel"></i>
+                Добавить фильтр
+                </button>
         </div>
 
-        <div class="panel__checkcontent">
-            <input class="panel__checkbox" type="checkbox" value="true" id="flexCheckDefault">
-            <label class="panel__checkbox-lable" for="flexCheckDefault">
-                Поиск по все таблицам
-            </label>
-        </div>
     </div>
 
     <div class="panel__search">
@@ -26,33 +38,86 @@
     </div>
 </div>
 
-
-<div>
-    <table id="ContentTable" class="Table">
-        <caption id="TableCaption" class="Table__caption">Список пользователей</caption>
-        <thead id="TableHead" class="Table__head">
+<div id="table-container">
+    <table id="ContentTable" class="table table-hover table-striped caption-top align-middle">
+        <caption id="TableCaption">Список пользователей</caption>
+        <thead id="TableHead" class="table-dark">
             <tr>
-                <th scope="col">№</th>
-                <th scope="col">Имя</th>
-                <th scope="col">Фамилия</th>
+                <th scope="col">
+                    №
+
+                </th>
+                <th scope="col">
+                    Имя
+
+                </th>
+                <th scope="col">
+                    Фамилия
+
+                </th>
+                <th scope="col">
+                    Действия
+                </th>
+            </tr>
+            <tr class="table-light">
+                <td>
+                    <span class="text-success">
+                        <i class="bi bi-sort-down sort-event"></i>
+                        сортировать
+                    </span>
+                </td>
+                <td>
+                    <div class="text-success">
+                        <i class="bi bi-sort-down sort-event"></i>
+                        сортировать
+                    </div>
+                </td>
+                <td>
+                    <span class="text-success">
+                        <i class="bi bi-sort-down sort-event"></i>
+                        сортировать
+                    </span>
+                </td>
+                <td></td>
             </tr>
         </thead>
-        <tbody id="TableBody" class="Table__body">
+        <tbody id="TableBody">
             <tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
+                <td class="align-end">
+
+
+                    <button type="button" class="btn btn-outline-danger me-2">
+                        <i class="bi bi-trash-fill"></i>
+                        удалить
+                    </button>
+
+                    <button type="button" class="btn btn-primary me-2">
+                        <i class="bi bi-pencil-square"></i>
+                        обновить
+                    </button>
+
+
+                </td>
             </tr>
 
             <tr>
                 <th scope="row">2</th>
                 <td>Jacob</td>
                 <td>Thornton</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry the Bird</td>
-                <td>3</td>
+                <td class="align-end">
+                    <button type="button" class="btn btn-outline-danger me-2">
+                        <i class="bi bi-trash-fill"></i>
+                        удалить
+                    </button>
+
+                    <button type="button" class="btn btn-primary me-2">
+                        <i class="bi bi-pencil-square"></i>
+                        обновить
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>
