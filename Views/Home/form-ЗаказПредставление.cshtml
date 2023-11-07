@@ -1,0 +1,160 @@
+@{
+    var customers = ViewData["customers"] as List<CustomerModel>;
+    var furnitures = ViewData["furnitures"] as List<FurnitureModel>;
+}
+
+
+
+
+<form>
+    <h1>Заполните</h1>
+    <div class="mb-3 row">
+        <label for="inputDate" class="col-sm-2 col-form-label">Дата доставки</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control" id="inputDate" aria-labelledby="dateHelpBlock" required>
+            <div id="dateHelpBlock" class="form-text">
+                Введите дату (пустой значение не допустимо!)
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="inputAdres" class="col-sm-2 col-form-label">Адрес доставки</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputAdres" aria-labelledby="AdresHelpBlock" required>
+            <div id="AdresHelpBlock" class="form-text">
+                Введите адрес доставки (пустой значение не допустимо!)
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mb-3 row">
+        <label for="inputCustomer" class="col-sm-2 col-form-label">Покупатель</label>
+        <div class="col-sm-10">
+            <select id="inputCustomer" class="form-select" aria-label="Пример выбора по умолчанию" aria-labelledby="CustomerHelpBlock"
+                required>
+                @foreach (var customer in customers)
+                {
+                    <option value="@Html.Raw(customer.ID)">
+                        ФИО: @Html.Raw(customer.ФИО) | Телефон: @Html.Raw(customer.Телефон)
+                    </option>
+                }
+            </select>
+            <div id="CustomerHelpBlock" class="form-text">
+                Выберите покупателя
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="inputFurniture" class="col-sm-2 col-form-label">Мебель</label>
+        <div class="col-sm-10">
+            <select id="inputFurniture" class="form-select" aria-label="Пример выбора по умолчанию" aria-labelledby="FurnitureHelpBlock"
+                required>
+                @foreach (var furniture in furnitures)
+                {
+                    <option value="@Html.Raw(furniture.ID)">
+                        Название: @Html.Raw(furniture.Название) | Цена: @Html.Raw(furniture.Цена)
+                    </option>
+                }
+            </select>
+            <div id="FurnitureHelpBlock" class="form-text">
+                Выберите мебель
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="inputCount" class="col-sm-2 col-form-label">Количество</label>
+        <div class="col-sm-10">
+            <input type="number" min="1" class="form-control" id="inputCount" aria-labelledby="CountHelpBlock" required>
+            <div id="CountHelpBlock" class="form-text">
+                Количество товара (не должно быть меньше 1)
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-success btn-event-add-row-table">Добавить</button>
+    <div id="ErrorForm" class="p-2">
+
+    </div>
+</form>
+
+<script>
+
+
+
+    $(".btn-event-add-row-table").on("click", function () {
+        event.preventDefault();
+        $('#ErrorForm').html("");
+        // Начнем с удаления всех классов 'is-invalid' с полей формы
+        $('.form-control').removeClass('is-invalid');
+
+        // Проверим каждое поле на наличие ошибок
+        var hasErrors = false;
+
+        // Проверка поля "Дата"
+        var inputDate = $('#inputDate');
+        if (!inputDate.val()) {
+            inputDate.addClass('is-invalid');
+            hasErrors = true;
+        }
+
+        // Проверка поля "Адрес доставки"
+        var inputAdres = $('#inputAdres');
+        if (inputAdres.val().trim() === '') {
+            inputAdres.addClass('is-invalid');
+            hasErrors = true;
+        }
+
+        // Проверка поля "Покупатель"
+        var inputCustomer = $('#inputCustomer');
+        if (inputCustomer.val() === undefined) {
+            inputCustomer.addClass('is-invalid');
+            hasErrors = true;
+        }
+
+        // Проверка поля "Мебель"
+        var inputFurniture = $('#inputFurniture');
+        if (inputFurniture.val() === undefined) {
+            inputFurniture.addClass('is-invalid');
+            hasErrors = true;
+        }
+
+        // Проверка поля "Количество"
+        var inputCount = $('#inputCount');
+        var countValue = parseFloat(inputCount.val());
+        if (isNaN(countValue) || countValue <= 0) {
+            inputCount.addClass('is-invalid');
+            hasErrors = true;
+        }
+
+        // Если есть ошибки, выведем сообщение
+        if (hasErrors) {
+            $('#ErrorForm').html('<div class="alert alert-danger">Пожалуйста, проверьте форму на наличие ошибок.</div>');
+        } else {
+            var inputC = $('#inputCustomer');
+            var selectedOptionC = inputC.find('option:selected');
+            var CValue = selectedOptionC.attr('value');
+            
+            var inputF = $('#inputFurniture');
+            var selectedOptionF = inputF.find('option:selected');
+            var FValue = selectedOptionF.attr('value');
+            
+            var data = {
+                "Date": inputDate.val(),
+                "Adres": inputAdres.val(),
+                "Customer": CValue,
+                "Furniture": FValue,
+                "Count": inputCount.val()
+            };
+            
+            PostRow(function (response) {
+                createTable();
+            },
+                tableActive,
+                data);
+        }
+    });
+</script>

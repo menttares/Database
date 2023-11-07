@@ -1,1 +1,24 @@
 
+.btn-event-row:hover {
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+@media (max-width: 74px) {
+    .btn-event-row {
+        font-size: 9px;
+    }
+}
+
+
+.is-invalid {
+    border: 1px solid red;
+}
+
+input:invalid {
+    border: 1px solid red;
+}
+
+form > input:valid {
+    border: 1px solid green;
+}

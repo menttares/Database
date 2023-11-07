@@ -16,10 +16,7 @@ $(".btn-event-get-table").on("click", function () {
     $(this).addClass("active");
 });
 
-// Обработка нажатия кнопки добавления записи
-$(".btn-event-add-row").on("click", function () {
 
-});
 
 // Получение столбцов таблицы
 function GetColums(callback, name) {
@@ -29,7 +26,7 @@ function GetColums(callback, name) {
 
     $.get('api/DB/columsTable', { tableName: name })
         .done(function (data) {
-            callback(data)
+            callback(data);
         });
 }
 
@@ -46,13 +43,74 @@ function GetTable(callback, name) {
 }
 
 // добавление данных
-function PostRow() {
-    
+function PostRow(callback, name, data) {
+    $.ajax({
+        url: `Home/PostForm?tableName=${name}`, 
+        type: 'POST',
+        data: data,
+        success: function (response) {
+            callback(response)
+        },
+        error: function (error) {
+            
+        }
+    });
 }
+
+function DeleteRow(callback, id) {
+    $.ajax({
+        url: `api/DB/daleteRow?tableName=${tableActive}&id=${id}`,
+        type: 'DELETE',
+        success: function() {
+            callback();
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            // Обработка ошибок
+        }
+    });
+}
+
+function FilterTable(callback, data) {
+    $.ajax({
+        url: `Home/PostFilterOrder`, 
+        type: 'POST',
+        data: data,
+        success: function (response) {
+            callback(response);
+        },
+        error: function (error) {
+
+        }
+    });
+}
+
+$('#inputSearchBtn').on("click", function(){
+    if ($('#inputSearch').val() === undefined)
+    {
+        GetTable(function (data) {
+
+            CreateRows(data);
+
+        });
+    }
+    else {
+        $.ajax({
+            url: `api/DB/Search?tableName=${tableActive}`, 
+            type: 'GET',
+            data: { 'search' : $('#inputSearch').val()},
+            success: function (response) {
+                CreateRows(response);
+            },
+            error: function (error) {
+    
+            }
+        });
+    }
+});
 
 
 $(function () {
-
+    
 });
 
 

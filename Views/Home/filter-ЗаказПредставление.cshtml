@@ -1,0 +1,123 @@
+<form>
+    <h1>Фильтр</h1>
+
+    <div class="mb-3 row">
+        <label for="inputDateStart" class="col-sm-2 col-form-label">Начальный период</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control" id="inputDateStart" aria-labelledby="dateHelpBlock">
+            <div id="dateHelpBlock" class="form-text">
+                Введите начальную дату
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="inputDateEnd" class="col-sm-2 col-form-label">Конечный период период</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control" id="inputDateEnd" aria-labelledby="dateHelpBlock">
+            <div id="dateHelpBlock" class="form-text">
+                Введите конечную дату
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="inputDateAdres" class="col-sm-2 col-form-label">Совпадения по улице</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputDateAdres" aria-labelledby="dateHelpBlock">
+            <div id="dateHelpBlock" class="form-text">
+                Введите адрес
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="inputDateCustomer" class="col-sm-2 col-form-label">Совпадения по ФИО клиента</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputDateCustomer" aria-labelledby="dateHelpBlock">
+            <div id="dateHelpBlock" class="form-text">
+                Введите ФИО клиента или его часть
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="inputDateFurniture" class="col-sm-2 col-form-label">Совпадения по названию мебели</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputDateFurniture" aria-labelledby="dateHelpBlock">
+            <div id="dateHelpBlock" class="form-text">
+                Введите название мебели
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="inputDateCostStart" class="col-sm-2 col-form-label">Начальная цену</label>
+        <div class="col-sm-10">
+            <input type="number" min="1" class="form-control" id="inputDateCostStart" aria-labelledby="dateHelpBlock">
+            <div id="dateHelpBlock" class="form-text">
+                Введите начальную цену на товар
+            </div>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="inputDateCostEnd" class="col-sm-2 col-form-label">Конечную цену</label>
+        <div class="col-sm-10">
+            <input type="number" min="1" class="form-control" id="inputDateCostEnd" aria-labelledby="dateHelpBlock">
+            <div id="dateHelpBlock" class="form-text">
+                Введите конечную цену на товар
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-success btn-event-add-filter-table">Установить правила</button>
+    <div id="ErrorForm" class="p-2">
+
+    </div>
+</form>
+
+<script>
+    $('.btn-event-add-filter-table').on('click', function (event) {
+        event.preventDefault(); // Предотвращаем отправку формы
+        $('#ErrorForm').html("");
+
+        const startDate = new Date($('#inputDateStart').val());
+        const endDate = new Date($('#inputDateEnd').val());
+        const startCost = parseFloat($('#inputDateCostStart').val());
+        const endCost = parseFloat($('#inputDateCostEnd').val());
+
+        var hasErrors = false;
+
+        @* console.log(startDate);
+        console.log(endDate); *@
+
+        // Проверка на начальную и конечную дату
+        if (endDate < startDate) {
+            hasErrors = true;
+        }
+
+        // Проверка на начальную и конечную цену
+        if (endCost < startCost) {
+            hasErrors = true;
+        }
+
+        if (hasErrors) {
+            $('#ErrorForm').html('<div class="alert alert-danger">Пожалуйста, проверьте форму на наличие ошибок.</div>');
+        } else {
+            var data = {
+                "StartDate": $('#inputDateStart').val(),
+                "EndDate": $('#inputDateEnd').val(),
+                "Adres": $('#inputDateAdres').val(),
+                "Customer": $('#inputDateCustomer').val(),
+                "Furniture": $('#inputDateFurniture').val(),
+                "StartCost": $('#inputDateCostStart').val(),
+                "EndCost": $('#inputDateCostEnd').val()
+            };
+
+            FilterTable(function(respData){
+                CreateRows(respData);
+            },data);
+        }
+    });
+
+</script>

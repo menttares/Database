@@ -4,12 +4,18 @@
 
 <div class=" d-flex justify-content-center">
     <div class="btn-group" role="group" aria-label="Basic outlined example">
-        <button type="button" data-tablename="ЗаказПредставление" class="btn btn-outline-primary btn-event-get-table">Заказы</button>
-        <button type="button" data-tablename="ПеревозкиПредставление" class="btn btn-outline-primary btn-event-get-table">Перевозки</button>
-        <button type="button" data-tablename="Покупатель" class="btn btn-outline-primary btn-event-get-table">Покупатели</button>
-        <button type="button" data-tablename="Мебель" class="btn btn-outline-primary btn-event-get-table">Товары</button>
-        <button type="button" data-tablename="Машина" class="btn btn-outline-primary btn-event-get-table">Машины</button>
-        <button type="button" data-tablename="Водитель" class="btn btn-outline-primary btn-event-get-table">Водители</button>
+        <button type="button" data-tablename="ЗаказПредставление"
+            class="btn btn-outline-primary btn-event-get-table">Заказы</button>
+        <button type="button" data-tablename="ПеревозкиПредставление"
+            class="btn btn-outline-primary btn-event-get-table">Перевозки</button>
+        <button type="button" data-tablename="Покупатель"
+            class="btn btn-outline-primary btn-event-get-table">Покупатели</button>
+        <button type="button" data-tablename="Мебель"
+            class="btn btn-outline-primary btn-event-get-table">Товары</button>
+        <button type="button" data-tablename="Машина"
+            class="btn btn-outline-primary btn-event-get-table">Машины</button>
+        <button type="button" data-tablename="Водитель"
+            class="btn btn-outline-primary btn-event-get-table">Водители</button>
     </div>
 </div>
 
@@ -23,19 +29,24 @@
             <button type="button" class="btn btn-success btn-event-add-row">
                 <i class="bi bi-plus-circle"></i>
                 Добавить строку
-                </button>
+            </button>
             <button type="button" class="btn btn-warning btn-event-add-filter">
                 <i class="bi bi-funnel"></i>
                 Добавить фильтр
-                </button>
+            </button>
         </div>
 
     </div>
 
     <div class="panel__search">
-        <input type="text" class="form-control" placeholder="Введите текст..." aria-label="">
-        <input type="button" class="btn btn-primary ms-1" value="Поиск">
+        <input id="inputSearch" type="text" class="form-control" placeholder="Введите текст..." aria-label="">
+        <input id="inputSearchBtn"type="button" class="btn btn-primary ms-1" value="Поиск">
     </div>
+</div>
+
+
+<div id="form">
+    
 </div>
 
 <div id="table-container">
@@ -96,7 +107,7 @@
 
                     <button type="button" class="btn btn-primary me-2">
                         <i class="bi bi-pencil-square"></i>
-                        обновить
+                        изменить
                     </button>
 
 
@@ -121,4 +132,20 @@
             </tr>
         </tbody>
     </table>
+
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="..." class="rounded me-2" alt="...">
+                <strong class="me-auto">Bootstrap</strong>
+                <small>Сейчас</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+            </div>
+            <div class="toast-body">
+                Удаление строки на сервере..
+            </div>
+        </div>
+    </div>
+
 </div>

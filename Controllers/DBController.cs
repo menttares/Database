@@ -77,18 +77,26 @@ public class DBController : ControllerBase
         return Content(jsonResult, "application/json");
     }
 
+    [HttpGet("Search")]
+    public IActionResult Search(String tableName, String search)
+    {
+        if (tableName == "ЗаказПредставление")
+        {
+            var result = database.SearchOrders(search);
+            var jsonResult = JsonConvert.SerializeObject(result, new DataTableConverter());
+            return Content(jsonResult, "application/json");
+        }
 
-    // [HttpGet("getView")]
-    // public IActionResult GetView(String tableName)
-    // {
-    //     _logger.LogInformation("[Api] - входящий запрос на GetTable()");
+        return BadRequest();
+    }
 
-    //     String sql = string.Empty;
+    [HttpDelete("daleteRow")]
+    public IActionResult DeleteRow(String tableName, int id)
+    {
+        _logger.LogInformation($"[Api] - входящий запрос на DeleteRow({tableName},{id})");
 
-    //     var result = database.GetTable(tableName);
-    //     var jsonResult = JsonConvert.SerializeObject(result, Formatting.Indented, new DataTableConverter());
+        database.DeleteRow(tableName, id);
+        return Ok();
+    }
 
-
-    //     return Content(jsonResult, "application/json");
-    // }
 }
