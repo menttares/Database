@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LpIp6OEzqgcKhwlEyFObxzS0YY93w2mn3a5h5/V3Mvc=",
+  "Hash": "HdTaY4ny5Bci3qtfyEWOyFCrPwvudTDy4P2DdU2TlTU=",
   "Source": "Database",
   "BasePath": "_content/Database",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/Api.js"
+    },
+    {
+      "Identity": "/home/su/vscode/C#/Database/wwwroot/js/Report.js",
+      "SourceId": "Database",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/su/vscode/C#/Database/wwwroot/",
+      "BasePath": "_content/Database",
+      "RelativePath": "js/Report.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/Report.js"
     },
     {
       "Identity": "/home/su/vscode/C#/Database/wwwroot/js/Table.js",
