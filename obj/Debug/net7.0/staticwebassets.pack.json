@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets/js/Api.js"
     },
     {
+      "Id": "/home/su/vscode/C#/Database/wwwroot/js/Chart.js",
+      "PackagePath": "staticwebassets/js/Chart.js"
+    },
+    {
       "Id": "/home/su/vscode/C#/Database/wwwroot/js/Report.js",
       "PackagePath": "staticwebassets/js/Report.js"
     },

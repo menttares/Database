@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = /home/su/vscode/C#/Database
 build_property._RazorSourceGeneratorDebug = 
 
+[/home/su/vscode/C\#/Database/Views/Chart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2hhcnQvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/su/vscode/C\#/Database/Views/Home/filter-ЗаказПредставление.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9maWx0ZXIt0JfQsNC60LDQt9Cf0YDQtdC00YHRgtCw0LLQu9C10L3QuNC1LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
