@@ -6,6 +6,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
 
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.FileProviders.Physical;
+
 namespace Database
 {
     public class Program
@@ -19,9 +23,15 @@ namespace Database
 
             // Подключение сервиса PostgresDataService
             builder.Services.AddTransient<PostgresDataService>(_ => new PostgresDataService(connectionString));
+            
+            if (builder.Environment.IsDevelopment())
+            {
+                builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+            }
 
             // Добавляем сервисы в контейнер.
             builder.Services.AddControllersWithViews();
+
 
             var app = builder.Build();
 

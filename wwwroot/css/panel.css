@@ -1,0 +1,23 @@
+
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.panel__checklist {
+    display: flex;
+    align-items: flex-start;
+    padding: 5px;
+}
+
+.panel__search {
+    display: flex;
+}
+
+.panel__checkcontent {
+    margin-left: 5px;
+}
+
+
